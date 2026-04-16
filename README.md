@@ -1,53 +1,125 @@
+```markdown
 # Parking Management System
-A lightweight, Object-Oriented Java application to securely manage multiple parking agencies from a single console.
+
+A console-based Java application built using Object-Oriented Programming (OOP) to manage multiple parking agencies independently within a single system.
+
+---
+
+## Overview
+
+This system allows multiple parking agencies to operate in one application while keeping their data completely separate. Each agency manages its own parking slots, vehicles, pricing, and revenue without affecting others.
+
+---
 
 ## Features
 
-- **Multi-Agency Support**: Run multiple distinct parking agencies. Data is strictly isolated per business.
-- **Smart Menus**: The system tracks live slot capacity. If a vehicle type is physically full, the option hides from the menu to prevent overbooking.
-- **Dynamic Pricing**: Edit your parking tariffs directly from the dashboard. New prices are instantly applied to all new checkouts.
-- **Automated Checkout**: Computes the exact parked duration and automatically calculates the final bill based on your agency's pricing rates.
-- **Local Persistence**: All vehicles, revenues, and pricing data are serialized natively and saved to your hard drive.
+### Multi-Agency Support
+- Multiple parking agencies can be created and managed
+- Each agency has its own isolated data (slots, vehicles, revenue)
 
-## OOP Principles Applied
-This project is built directly upon the 4 pillars of Object-Oriented Programming:
+### Smart Menu System
+- Automatically hides vehicle options when slots are full
+- Prevents overbooking
 
-1. **Encapsulation**: The `Agency` class strictly safeguards its own `ParkingSlot` instances, `Vehicle` arrays, and `revenue`. No global variables are used—external classes cannot maliciously alter another agency's private logic.
-2. **Abstraction**: Complex byte-level file saving and object mapping is completely abstracted behind `DataStore.java`. The rest of the app simply calls `DataStore.save()` without needing to understand how Java File IO works.
-3. **Inheritance**: Models inherently utilize interface inheritance by implementing the `Serializable` contract, forcing them to adhere to Java's strict byte-stream serialization hierarchy. 
-4. **Polymorphism**: The system utilizes polymorphic behavior through the `VehicleType` enum and generic Java Collections, treating different types of inputs (Bike, Car, Bus) dynamically at runtime without rigid hardcoding.
+### Dynamic Pricing
+- Agency owners can update parking charges anytime
+- Updated prices are applied instantly to new checkouts
+
+### Automated Billing
+- Calculates parking duration using entry and exit time
+- Generates total bill automatically
+
+### Data Persistence
+- All data is stored locally using Java Serialization
+- Data remains محفوظ even after restarting the program
+
+---
+
+## OOP Concepts Used
+
+### Encapsulation
+- Each agency manages its own data securely
+- No direct external access to internal data
+
+### Abstraction
+- File handling and data storage logic is hidden
+- Simple method calls like `DataStore.save()` are used
+
+### Inheritance
+- Classes implement `Serializable` for object storage
+
+### Polymorphism
+- Different vehicle types (Bike, Car, Bus) handled dynamically
+
+---
 
 ## Security
-- **HashUtil**: A dedicated utility that handles encryption. It applies cryptographic hashing to agency login passwords so plain text is never stored.
+
+- Passwords are encrypted using hashing
+- Plain text passwords are never stored
+
+---
 
 ## Project Structure
-```text
-src/
-├── Main.java              (Program Entry & Registration CLI)
-├── Dashboard.java         (Interactive interface for Agency owners)
-├── model/
-│   ├── Agency.java        (Primary encapsulated business object)
-│   ├── Vehicle.java       (State and timing of parked vehicles)
-│   ├── ParkingSlot.java   (Slot availability and assignment)
-│   └── VehicleType.java   (Enum: BIKE, CAR, BUS)
-├── dao/
-│   └── AgencyDAO.java     (Data Retrieval and login validation)
-├── service/
-│   └── ParkingSystem.java (Core logic for booking / checkout routing)
-├── config/
-│   └── DataStore.java     (Offline file serialization handling)
-└── util/
-    ├── HashUtil.java      (Password hashing and ID encryption)
-    ├── IdGenerator.java   (Ticket enumeration)
-    └── TimeUtil.java      (Time calculation algorithms)
+
 ```
 
+src/
+├── Main.java              (Program Entry Point)
+├── Dashboard.java         (User Interface)
+├── model/
+│   ├── Agency.java        (Agency Logic)
+│   ├── Vehicle.java       (Vehicle Data)
+│   ├── ParkingSlot.java   (Slot Management)
+│   └── VehicleType.java   (Enum: BIKE, CAR, BUS)
+├── dao/
+│   └── AgencyDAO.java     (Login & Data Access)
+├── service/
+│   └── ParkingSystem.java (Core Operations)
+├── config/
+│   └── DataStore.java     (File Storage Handling)
+└── util/
+├── HashUtil.java      (Password Encryption)
+├── IdGenerator.java   (Ticket Generation)
+└── TimeUtil.java      (Time Calculation)
+
+````
+
+---
+
+## How It Works
+
+1. User registers or logs in as an agency
+2. Dashboard is displayed
+3. User can:
+   - Add vehicles
+   - Allocate parking slots
+   - Checkout vehicles
+   - View reports
+4. Data is saved automatically
+
+---
+
 ## How to Run
-1. **Compile**:
-   ```bash
-   javac -d out src/**/*.java src/*.java
-   ```
-2. **Run**:
-   ```bash
-   java -cp out Main
-   ```
+
+### Compile
+```bash
+javac -d out src/**/*.java src/*.java
+````
+
+### Run
+
+```bash
+java -cp out Main
+```
+
+---
+
+## Tech Stack
+
+* Java (Core + OOP)
+* File Handling (Serialization)
+* Collections Framework
+
+---
+

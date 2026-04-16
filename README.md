@@ -64,23 +64,23 @@ This system allows multiple parking agencies to operate in one application while
 ```
 
 src/
-├── Main.java              (Program Entry Point)
-├── Dashboard.java         (User Interface)
+├── Main.java              
+├── Dashboard.java         
 ├── model/
-│   ├── Agency.java        (Agency Logic)
-│   ├── Vehicle.java       (Vehicle Data)
-│   ├── ParkingSlot.java   (Slot Management)
-│   └── VehicleType.java   (Enum: BIKE, CAR, BUS)
+│   ├── Agency.java        
+│   ├── Vehicle.java       
+│   ├── ParkingSlot.java   
+│   └── VehicleType.java   
 ├── dao/
-│   └── AgencyDAO.java     (Login & Data Access)
+│   └── AgencyDAO.java     
 ├── service/
 │   └── ParkingSystem.java (Core Operations)
 ├── config/
-│   └── DataStore.java     (File Storage Handling)
+│   └── DataStore.java     
 └── util/
 ├── HashUtil.java      (Password Encryption)
-├── IdGenerator.java   (Ticket Generation)
-└── TimeUtil.java      (Time Calculation)
+├── IdGenerator.java   
+└── TimeUtil.java      
 
 ````
 

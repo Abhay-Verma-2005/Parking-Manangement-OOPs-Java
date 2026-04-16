@@ -1,4 +1,3 @@
-```markdown
 # Parking Management System
 
 A console-based Java application built using Object-Oriented Programming (OOP) to manage multiple parking agencies independently within a single system.
@@ -122,4 +121,3 @@ java -cp out Main
 * Collections Framework
 
 ---
-

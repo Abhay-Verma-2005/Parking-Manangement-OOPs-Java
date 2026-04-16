@@ -1,18 +1,15 @@
 package model;
 
-import java.util.Set;
+public enum VehicleType {
+    BIKE, CAR, BUS;
 
-public class VehicleType {
-
-    public static final String BIKE = "BIKE";
-    public static final String CAR = "CAR";
-    public static final String BUS = "BUS";
-
-    private static final Set<String> TYPES = Set.of(BIKE, CAR, BUS);
-
-    public static String fromString(String t) {
+    public static VehicleType fromString(String t) {
         if (t == null) return null;
-        String val = t.trim().toUpperCase();
-        return TYPES.contains(val) ? val : null;
+        switch (t.toLowerCase().trim()) {
+            case "bike": return BIKE;
+            case "car": return CAR;
+            case "bus": return BUS;
+            default: return null;
+        }
     }
 }

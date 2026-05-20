@@ -6,13 +6,13 @@ import util.HashUtil;
 
 public class AgencyDAO {
 
-    public void register(String n, String p, String d, int b, int c, int bs, int ol, double oc) {
+    public void register(String n, String p, String d, int b, int c, int bs, int ol, double oc, double p2, double p4, double ph) {
         if (DataStore.agcs.containsKey(n)) {
             System.out.println("Agency with name '" + n + "' already exists!");
             return;
         }
 
-        Agency a = new Agency(n, HashUtil.hash(p), d, b, c, bs, ol, oc);
+        Agency a = new Agency(n, HashUtil.hash(p), d, b, c, bs, ol, oc, p2, p4, ph);
         DataStore.agcs.put(n, a);
         DataStore.save();
         System.out.println("Agency registered successfully!");

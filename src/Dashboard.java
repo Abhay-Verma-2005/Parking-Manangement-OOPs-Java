@@ -36,9 +36,9 @@ public class Dashboard {
             }
 
             if (ch == 1) {
-                long fb = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.BIKE).count();
-                long fc = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.CAR).count();
-                long fbs = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.BUS).count();
+                long fb = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.TWO_WHEELER).count();
+                long fc = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.FOUR_WHEELER).count();
+                long fbs = agcy.slts.stream().filter(s -> !s.occ && s.type == VehicleType.HEAVY_VEHICLE).count();
 
                 if (fb == 0 && fc == 0 && fbs == 0) {
                     System.out.println("No parking slots available in this agency.");
@@ -46,9 +46,9 @@ public class Dashboard {
                 }
 
                 System.out.println("\nSelect Vehicle Type:");
-                if (fb > 0) System.out.println("1 -> Two Wheeler");
-                if (fc > 0) System.out.println("2 -> Car");
-                if (fbs > 0) System.out.println("3 -> Bus");
+                if (fb > 0) System.out.println("1 -> 2 Wheeler");
+                if (fc > 0) System.out.println("2 -> 4 Wheeler");
+                if (fbs > 0) System.out.println("3 -> Heavy Vehicle");
                 System.out.print("Choose type: ");
 
                 String ts = "";
@@ -62,9 +62,9 @@ public class Dashboard {
                     continue;
                 }
 
-                if (tc == 1 && fb > 0) ts = "bike";
-                else if (tc == 2 && fc > 0) ts = "car";
-                else if (tc == 3 && fbs > 0) ts = "bus";
+                if (tc == 1 && fb > 0) ts = "2 wheeler";
+                else if (tc == 2 && fc > 0) ts = "4 wheeler";
+                else if (tc == 3 && fbs > 0) ts = "heavy vehicle";
                 else {
                     System.out.println("Invalid selection or no slots available for this type.");
                     continue;
@@ -94,23 +94,23 @@ public class Dashboard {
 
             } else if (ch == 6) {
                 System.out.println("\n--- Current Pricing ---");
-                System.out.println("Bike: Rs." + agcy.prc.get(VehicleType.BIKE));
-                System.out.println("Car: Rs." + agcy.prc.get(VehicleType.CAR));
-                System.out.println("Bus: Rs." + agcy.prc.get(VehicleType.BUS));
+                System.out.println("2 Wheeler: Rs." + agcy.prc.get(VehicleType.TWO_WHEELER));
+                System.out.println("4 Wheeler: Rs." + agcy.prc.get(VehicleType.FOUR_WHEELER));
+                System.out.println("Heavy Vehicle: Rs." + agcy.prc.get(VehicleType.HEAVY_VEHICLE));
                 
                 System.out.println("\nEnter New Prices:");
                 try {
-                    System.out.print("Bike Price: ");
+                    System.out.print("2 Wheeler Price: ");
                     double bp = sc.nextDouble();
-                    System.out.print("Car Price: ");
+                    System.out.print("4 Wheeler Price: ");
                     double cp = sc.nextDouble();
-                    System.out.print("Bus Price: ");
+                    System.out.print("Heavy Vehicle Price: ");
                     double sp = sc.nextDouble();
                     sc.nextLine();
 
-                    agcy.prc.put(VehicleType.BIKE, bp);
-                    agcy.prc.put(VehicleType.CAR, cp);
-                    agcy.prc.put(VehicleType.BUS, sp);
+                    agcy.prc.put(VehicleType.TWO_WHEELER, bp);
+                    agcy.prc.put(VehicleType.FOUR_WHEELER, cp);
+                    agcy.prc.put(VehicleType.HEAVY_VEHICLE, sp);
                     
                     DataStore.save();
                     System.out.println("Prices updated successfully.");

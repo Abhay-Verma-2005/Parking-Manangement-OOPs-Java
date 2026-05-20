@@ -5,8 +5,7 @@ import dao.AgencyDAO;
 import service.ParkingSystem;
 
 public class Main {
-
-    static Scanner sc = new Scanner(System.in);
+    static Scanner sc=new Scanner(System.in);
     static AgencyDAO adao = new AgencyDAO();
     static ParkingSystem psys = new ParkingSystem();
 
@@ -14,7 +13,7 @@ public class Main {
 
         DataStore.init();
 
-        System.out.println("  PARKING MANAGEMENT SYSTEM");
+        System.out.println("   PARKING MANAGEMENT SYSTEM   ");
 
         while (true) {
             System.out.println("\n1. Register Agency");
@@ -23,10 +22,11 @@ public class Main {
             System.out.print("Choose: ");
 
             int ch;
-            try {
-                ch = sc.nextInt();
+            try{
+                ch=sc.nextInt();
                 sc.nextLine();
-            } catch (Exception e) {
+            }
+            catch (Exception e){
                 sc.nextLine();
                 System.out.println("Please enter a valid number.");
                 continue;
@@ -35,10 +35,10 @@ public class Main {
             if (ch == 1) reg();
             else if (ch == 2) log();
             else if (ch == 3) {
-                System.out.println("Goodbye!");
+                System.out.println("Goodbye! ");
                 break;
             } else {
-                System.out.println("Invalid choice.");
+                System.out.println("Invalid choice. ");
             }
         }
     }
@@ -46,42 +46,34 @@ public class Main {
     static void reg() {
         System.out.print("Agency Name: ");
         String n = sc.nextLine();
-
+        //encr
         System.out.print("Password: ");
         String p = sc.nextLine();
-
         System.out.print("Description: ");
         String d = sc.nextLine();
 
-        int b = rd("Bike slots: ");
-        int c = rd("Car slots: ");
-        int bs = rd("Bus slots: ");
+        int b = rd("2 Wheeler's slots: ");
+        int c = rd("4 Wheeler's slots: ");
+        int bs = rd("Heavy Vehicle's slots: ");
+        double p2 = rdDouble("2 Wheeler Price/Hr (Rs.): ");
+        double p4 = rdDouble("4 Wheeler Price/Hr (Rs.): ");
+        double ph = rdDouble("Heavy Vehicle Price/Hr (Rs.): ");
 
         int ol = rd("Overtime Limit (Hrs): ");
-        
-        System.out.print("Overtime Fine/Hr (Rs.): ");
-        double oc;
-        try {
-            oc = sc.nextDouble();
-        } catch (Exception e) {
-            oc = 0.0;
-        }
-        sc.nextLine();
+        double oc = rdDouble("Overtime Fine/Hr (Rs.): ");
 
-        adao.register(n, p, d, b, c, bs, ol, oc);
+        adao.register(n, p, d, b, c, bs, ol, oc, p2, p4, ph);
     }
 
     static void log() {
         System.out.print("Agency Name: ");
-        String n = sc.nextLine();
-
+        String n=sc.nextLine();
         System.out.print("Password: ");
         String p = sc.nextLine();
-
         Agency a = adao.login(n, p);
 
         if (a != null) {
-            System.out.println("Login successful! Welcome, " + a.name);
+            System.out.println("Login successful! Welcome, " + a.name.toUpperCase());
             psys.loadSlots(a);
             Dashboard.start(a, psys);
             
@@ -100,6 +92,20 @@ public class Main {
             sc.nextLine();
             System.out.println("Invalid number, defaulting to 0.");
             return 0;
+        }
+        sc.nextLine();
+        return x;
+    }
+
+    static double rdDouble(String m) {
+        System.out.print(m);
+        double x;
+        try {
+            x = sc.nextDouble();
+        } catch (Exception e) {
+            sc.nextLine();
+            System.out.println("Invalid number, defaulting to 0.0.");
+            return 0.0;
         }
         sc.nextLine();
         return x;

@@ -76,10 +76,10 @@ public class ParkingSystem {
         Double rt = curr.prc.get(tv.type);
         if (rt == null) rt = 0.0;
 
-        double nrmHrs = Math.min(hr, curr.ovLmt);
         double extHrs = Math.max(0, hr - curr.ovLmt);
 
-        double amt = Math.round(((nrmHrs * rt) + (extHrs * curr.ovChg)) * 100.0) / 100.0;
+        // Calculate amount: Total time * base rate + overtime * overtime rate
+        double amt = Math.round(((hr * rt) + (extHrs * curr.ovChg)) * 100.0) / 100.0;
 
         tv.ext = end;
 

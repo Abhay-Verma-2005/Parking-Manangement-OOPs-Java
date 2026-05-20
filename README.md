@@ -1,9 +1,30 @@
+<table>
+  <tr>
+    <td width="60%">
 
-# Parking Management System
+## Parking Management System
 
 A console-based Java application built using Object-Oriented Programming (OOP) to manage multiple parking agencies independently within a single system.
 
----
+- Multi-agency support
+- Vehicle entry & exit management
+- Parking slot allocation
+- Billing and receipt generation
+- Clean modular OOP design
+
+   </td>
+
+   <td width="40%" align="right">
+      <img 
+        src="https://private-user-images.githubusercontent.com/74038190/242390692-0b335028-1d3d-4ee5-b5b3-a373d499be7e.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzkyNzQyNDEsIm5iZiI6MTc3OTI3Mzk0MSwicGF0aCI6Ii83NDAzODE5MC8yNDIzOTA2OTItMGIzMzUwMjgtMWQzZC00ZWU1LWI1YjMtYTM3M2Q0OTliZTdlLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTIwVDEwNDU0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI5ZWQ3YmNiNmFhZjhjMDhkNTAxNWY0Nzk1NTMzNGRkNjhlNDkwNzYxYTI2OTRhOTI0NTBkYTI3MjU1M2MyM2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.bCyVunwjLk6lTLtMIaH50Cq-wlv-0QqbNyjR6se9CFg" 
+        width="300" 
+        alt="Coder GIF"
+      />
+   </td>
+  </tr>
+</table>
+
+
 
 ## Overview
 

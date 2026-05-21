@@ -16,9 +16,9 @@ A console-based Java application built using Object-Oriented Programming (OOP) t
 
    <td width="40%" align="right">
       <img 
-        src="https://private-user-images.githubusercontent.com/74038190/242390692-0b335028-1d3d-4ee5-b5b3-a373d499be7e.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzkyNzQyNDEsIm5iZiI6MTc3OTI3Mzk0MSwicGF0aCI6Ii83NDAzODE5MC8yNDIzOTA2OTItMGIzMzUwMjgtMWQzZC00ZWU1LWI1YjMtYTM3M2Q0OTliZTdlLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA1MjAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNTIwVDEwNDU0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI5ZWQ3YmNiNmFhZjhjMDhkNTAxNWY0Nzk1NTMzNGRkNjhlNDkwNzYxYTI2OTRhOTI0NTBkYTI3MjU1M2MyM2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.bCyVunwjLk6lTLtMIaH50Cq-wlv-0QqbNyjR6se9CFg" 
-        width="300" 
-        alt="Coder GIF"
+        src="https://github.com/Abhay-Verma-2005/Abhay-Verma-Files/blob/main/ig.png" 
+        width="400" 
+        alt="Code Visuals"
       />
    </td>
   </tr>
